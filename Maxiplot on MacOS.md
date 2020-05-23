@@ -1,0 +1,5 @@
+- Install Homebrew: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+- Install Maxima: brew install maxima: brew install maxima
+- Install GNUPlot: brew install gnuplot
+- tilføj parameteren: -enable-write18 til dine pdflatex parametere.
+- Omdøb til  maxiplot-mac.sty til maxiplot.sty

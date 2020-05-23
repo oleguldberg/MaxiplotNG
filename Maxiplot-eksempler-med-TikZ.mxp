@@ -1,0 +1,6 @@
+\gdef\mxpi { 
+\left[ x=2 \right] 
+} 
+\gdef\mxpii { 
+\left[ x=-2 , x=2 \right] 
+} 

@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[danish]{babel} 
+\usepackage[T1]{fontenc} 
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[amsmath]{maxiplot}
+
+\def\Maxima{\emph{Maxima}}
+\def\Gnuplot{\emph{Gnuplot}}
+
+\begin{document}
+
+\title{Eksempler på \Maxima{} og \Gnuplot{} i \LaTeX{}.}
+\author{Ole Guldberg, ole@omgwtf.dk}
+\date{\today}
+\maketitle
+
+I dette dokument vil der være eksempler på hvordan man kan benytte \Maxima{} og \Gnuplot{} i sine \LaTeX{}-dokumenter. 
+\Maxima{} er et CAS-værktøj - Computer Algebraic System, det understøtter både numerisk og symbolske udregninger og \Gnuplot{} er et værktøj til plotning af grafer og funktioner. 
+\\ \\
+Man vil have mest gavn af disse eksempler, hvis man også ser på \LaTeX{}-kildekoden og de tilhørende .mac og .mxp-filer.
+
+\section*{Simple udregninger}
+
+$$\sqrt{13} = 
+\begin{maxima}
+  tex(float(sqrt(13)) )
+\end{maxima}$$
+
+$$\frac{\sqrt{13}}{3}=
+\begin{maxima}
+  tex(float(sqrt(13)/3))
+\end{maxima}$$
+
+$$\cos(3) = 
+\begin{maxima}
+  tex(float(cos(3)) )
+\end{maxima}$$
+
+\section*{Et eksempel på løsning af en andengradsligning}
+
+Andengradsligningen: $$-2 \cdot x^2+2 \cdot x+5 = 0$$ har løsningerne:
+$$\begin{maxima}
+  tex(solve(-2*x^2+2*x+5=0,x))
+\end{maxima}
+$$
+
+\section*{Et eksempel på løsning skæringspunkt mellem linie og parabel}
+
+Skæring mellem parabel og linie kan ses som en ligning hvor man sætte parablen og liniens ligning lig hinanden.
+$$x^2 - 2 \cdot x + 3 = - 3 \cdot x +7$$
+Parablen og linien skærer i
+$$\begin{maxima}
+  tex(solve(x^2-2*x+3=-3*x+7,x))
+\end{maxima}$$
+
+\section*{Integraler}
+
+$$\int x^2 + 2 \cdot x  -11 dx = 
+\begin{maxima}
+ tex(integrate(x^2+2*x-11,x))
+\end{maxima} + K$$
+ 
+$$\begin{maxima}
+  f: x/(x^3-3*x+2),
+  tex('integrate(f,x)),
+  print("="),
+  tex(integrate(f,x)),
+  print("+K")
+\end{maxima}$$
+
+\section*{Praktiske informationer og fif}
+
+\begin{itemize}
+  \item{Hvis du vil se svaret på \Maxima{}s udregninger i \LaTeX{}-format skal du kikke i filen: Maxiplot-eksempler.mxp.}
+  \item{Undgå filnavne med danske karaktere og mellemrum.}
+\end{itemize}  
+
+\end{document}
