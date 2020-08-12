@@ -35,9 +35,9 @@ $$
 \end{tikzpicture}
 
 \section*{Skæring mellem to 2. grads funktioner}
-De to parabler: $$y = x^2 -4$$ og $$y = -x^2+4$$ skærer i
+De to parabler: $$y = x^2 -5$$ og $$y = -x^2+5$$ skærer i
 $$\begin{maxima}
-  tex(solve(x^2-4=-x^2+4,x))
+  tex(solve(x^2-5=-x^2+5,x))
 \end{maxima}$$
 
 \begin{tikzpicture} 
@@ -46,8 +46,8 @@ $$\begin{maxima}
  \draw[->] (-5,0) -- (5,0) node[right] {$x$}; 
  \draw[->] (0,-5) -- (0,5) node[above] {$y$};
  % tegn linier
-\draw[color=red][domain=-3:3]    plot (\x, \x*\x  - 4)             node[right] {$f(x) = x^2-4$};
-\draw[color=blue][domain=-3:3]    plot (\x,-1 * \x * \x + 4 )             node[right] {$g(x) =-x^2+4$};
+\draw[color=red][domain=-3:3]    plot (\x, \x*\x  - 5)             node[right] {$f(x) = x^2-5$};
+\draw[color=blue][domain=-3:3]    plot (\x,-1 * \x * \x + 5 )             node[right] {$g(x) =-x^2+5$};
 \end{tikzpicture}
 
 \end{document}

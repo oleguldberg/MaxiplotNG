@@ -1,0 +1,26 @@
+Maxima 5.44.0 http://maxima.sourceforge.net
+using Lisp SBCL 2.0.0
+Distributed under the GNU Public License. See the file COPYING.
+Dedicated to the memory of William Schelter.
+The function bug_report() provides bug reporting information.
+(%i1) batch("Maxiplot-eksempler-med-TikZ.mac")
+
+read and interpret C:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempler-med-TikZ.mac
+(%i2) nolabels:true
+(%i3) display2d:false
+(%i4) load("mactex.lisp")
+(%i5) set_plot_option([run_viewer,false])
+(%i6) set_tex_environment_default("","")
+(%i7) lbrace:"{"
+(%i8) rbrace:"}"
+(%i9) file_output_append:false
+(%i10) with_stdout("Maxiplot-eksempler-med-TikZ.mxp")
+(%i11) file_output_append:true
+(%i12) load("mactex-utilities.lisp")
+(%i13) with_stdout("Maxiplot-eksempler-med-TikZ.mxp",
+                   print("\\gdef\\mxpi",lbrace),
+                   tex(solve((-2)*x+7 = 2*x-1,x)),print(rbrace))
+(%i14) with_stdout("Maxiplot-eksempler-med-TikZ.mxp",
+                   print("\\gdef\\mxpii",lbrace),
+                   tex(solve(x^2-5 = (-x^2)+5,x)),print(rbrace))
+(%o15) "C:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempler-med-TikZ.mac"

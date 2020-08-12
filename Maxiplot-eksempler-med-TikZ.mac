@@ -16,6 +16,6 @@ tex(solve(-2*x+7=2*x-1,x))
 ,print(rbrace))$
 
 with_stdout("Maxiplot-eksempler-med-TikZ.mxp", print("\\gdef\\mxpii",lbrace),
-tex(solve(x^2-4=-x^2+4,x))
+tex(solve(x^2-5=-x^2+5,x))
 
 ,print(rbrace))$
