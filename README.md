@@ -17,6 +17,10 @@ Kopiere filen maxiplot.sty til mappen hvor du skriver dit LaTeX-dokument og type
 Maxima linker til en stor mængde dokumentation på:
 http://maxima.sourceforge.net/documentation.html
 
+## Gnuplot dokumantation
+
+Du kan finde Gnuplot dokumentationen på:
+http://www.gnuplot.info/documentation.html
 
 ## Maxima LaTeX-output
 

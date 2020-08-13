@@ -1,0 +1,206 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[ansinew]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[amsmath]{maxiplot}
+
+\title{Maxiplot: Maxima and Gnuplot in \LaTeX.\\}
+\date{\today}
+\author{Ole Guldberg}
+
+\def\Maxima{\emph{Maxima}}
+\def\Gnuplot{\emph{Gnuplot}}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+For those who do not know \Maxima, it is a symbolic calculation
+program which can be used to compute derivatives and integrals, solve
+equations, find limits, work with vectors and matrices and create
+graphics, among many other things. It also adds the possibility to
+write programs, thus expanding its capabilities. As if all this was
+not enough, it is also released under the GNU General Public License
+and it can be downloaded for free at
+\texttt{http://maxima.sourceforge.net}, where there is also
+documentation in several languages (including Spanish).
+
+The purpose of this \LaTeX{} package is to provide ``programming''
+capabilities importing the results, without the need of working with
+various files and interfaces. Maxima code can be included within the
+\LaTeX{} document. When the document is processed, a file with
+extension \texttt{.mac} is generated, which can be directly processed
+by Maxima, creating another file with extension \texttt{.mxp}; when
+the \LaTeX{} document is processed again, that file will be
+automatically inserted.
+
+\Gnuplot{} commands can also be inserted, thanks to some additional
+commands added by J. M. Mira. Thus, in addition to the auxiliary files
+already mentioned, another file with extension \texttt{.gnp} will be
+created, which after being processed by \Gnuplot{} can be added to the
+document.
+
+
+
+\section{Gnuplot}
+While \Maxima{} can create graphics via \Gnuplot{}, sometimes it might
+be preferable to work directly with this last program. In order to do
+that, the environments \texttt{gnuplot} and its verbatim version
+\texttt{vgnuplot} are used.
+
+\begin{gnuplot}
+set term png crop enhanced font "calibri, 10"
+set output "t.png"
+set yrange [-2:2]
+set xrange [-4:4]
+set xzeroaxis
+set yzeroaxis
+plot [-4:4] sin(x),cos(x)
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{t.png}
+\end{center}
+
+Here is a 3D example
+\begin{verbatim}
+\begin{gnuplot}
+  set term png crop enhanced font "calibri, 10"
+  set output "toros.png"
+  set parametric
+  set urange [0:2*pi]
+  set vrange [-pi:pi]
+  set isosamples 36,24
+  set hidden3d
+  set view 75,15,1,1
+  unset key
+  set ticslevel 0
+  x1(u,v)=cos(u)+1*cos(u)*cos(v)
+  y1(u,v)=sin(u)+1*sin(u)*cos(v)
+  z1(u,v)=.5*sin(v)
+  x2(u,v)=1+cos(u)+.5*cos(u)*cos(v)
+  y2(u,v)=.5*sin(v)
+  z2(u,v)=sin(u)+.5*sin(u)*cos(v)
+  set multiplot
+  splot x1(u,v), y1(u,v), z1(u,v) w pm3d, x2(u,v), y2(u,v), z2(u,v) w pm3d
+  splot x1(u,v), y1(u,v), z1(u,v) lt 3,   x2(u,v), y2(u,v), z2(u,v) lt 5 
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{toros.png}
+\end{center}
+\end{verbatim}
+
+
+\begin{gnuplot}
+  set term png crop enhanced font "calibri, 10"
+  set output "toros.png"
+  set parametric
+  set urange [0:2*pi]
+  set vrange [-pi:pi]
+  set isosamples 36,24
+  set hidden3d
+  set view 75,15,1,1
+  unset key
+  set ticslevel 0
+  x1(u,v)=cos(u)+1*cos(u)*cos(v)
+  y1(u,v)=sin(u)+1*sin(u)*cos(v)
+  z1(u,v)=.5*sin(v)
+  x2(u,v)=1+cos(u)+.5*cos(u)*cos(v)
+  y2(u,v)=.5*sin(v)
+  z2(u,v)=sin(u)+.5*sin(u)*cos(v)
+  set multiplot
+  splot x1(u,v), y1(u,v), z1(u,v) w pm3d, x2(u,v), y2(u,v), z2(u,v) w pm3d
+  splot x1(u,v), y1(u,v), z1(u,v) lt 3,   x2(u,v), y2(u,v), z2(u,v) lt 5 
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{toros.png}
+\end{center}
+
+Let us examine the \verb|\mxpIncludegraphics| command: its usage is
+the same as \verb|includegraphics| from package \verb|graphicx|; in
+fact, it just makes sure that the graphic file exists before invoking
+that macro.
+
+\subsection{Problems}
+This is an experimental version; many of the capabilities of Maxima
+have not been tested and it has not been tried with the most important
+\LaTeX{} packages. Thus, it will surely need some tweaking.
+
+However, I think that most of the problems will appear when showing
+certain outputs. For instance, if the result of a computation is too
+long, it will not be easy to break it into several lines (except if
+one works in Maxima and then copies the result to the document, of
+course).
+
+Other possible problems can be addressed from within the \LaTeX{}
+document. By default, Maxima orders expressions by inverse
+alphabetical order; hence, if we type:\\
+\verb|  $$\imaxima{tex(x+y+z+t=0)}$$|\\
+we get:
+$$\imaxima{tex(x+y+z+t=0)}$$
+
+That can be avoided by using Maxima functions \texttt{ordergreat} and
+\texttt{unorder}:
+\begin{verbatim}
+\imaximacmd{ordergreat(x,y,z,t)$}
+$$\imaxima{tex(x+y+z+t=0)}$$
+\imaximacmd{unorder()$}
+\end{verbatim}
+%\imaximacmd{ordergreat(x,y,z,t)$}
+%$$\imaxima{tex(x+y+z+t=0)}$$
+%\imaximacmd{unorder()$}
+
+Furthermore, if we would like to align several equations, we will need
+to dive a little deeper:
+\begin{verbatim}
+\begin{maximacmd}
+  ordergreat(x,y,z)$
+  :lisp(defprop mequal (&=) texsym)
+\end{maximacmd}
+
+\begin{maxima*}
+  eq1:a-2*b=x+y,
+  eq2:b=2*x-3*y+2*z,
+  tex(eq1),
+  print("\\\\"),
+  tex(eq2)
+\end{maxima*}
+
+\begin{maximacmd}
+  unorder()$
+  :lisp(defprop mequal (=) texsym)    
+\end{maximacmd}
+\end{verbatim}
+
+\begin{maximacmd}
+  ordergreat(x,y,z)$
+  :lisp(defprop mequal (&=) texsym)
+\end{maximacmd}
+
+\begin{maxima*}
+  eq1:a-2*b=x+y,
+  eq2:b=2*x-3*y+2*z,
+  tex(eq1),
+  print("\\\\"),
+  tex(eq2)
+\end{maxima*}
+
+\begin{maximacmd}
+  unorder()$
+  :lisp(defprop mequal (=) texsym)    
+\end{maximacmd}
+
+\begin{align}
+  \maximacurrent
+\end{align}
+
+\section{A few last words}
+As I mentioned before, this is an experimental package that will
+probably need some amendments and additions, so any ideas or comments
+will be welcome.
+\\
+
+\raggedleft{Jos\'e Miguel M. Planas}\\
+\raggedleft{$<$nohaim@gmail.com$>$}\\[10pt]
+\raggedleft{(English translation by Jaime Villate)}
+                  
+\end{document}

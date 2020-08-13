@@ -1,0 +1,8 @@
+\gdef\mxpi { 
+z+y+x+t=0
+} 
+\gdef\mxpii { 
+a-2\,b&=x+y
+\\ 
+b&=2\,x-3\,y+2\,z
+} 

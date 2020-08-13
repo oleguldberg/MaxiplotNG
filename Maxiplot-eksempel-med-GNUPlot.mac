@@ -1,0 +1,32 @@
+ nolabels:true$
+ display2d:false$
+ load("mactex.lisp")$
+ set_plot_option([run_viewer, false])$
+ set_tex_environment_default("","")$
+ lbrace:"{"$
+ rbrace:"}"$
+ file_output_append:false$
+ with_stdout("Maxiplot-eksempel-med-GNUPlot.mxp")$
+ file_output_append:true$ 
+load("mactex-utilities.lisp")$
+
+with_stdout("Maxiplot-eksempel-med-GNUPlot.mxp", print("\\gdef\\mxpi",lbrace),
+tex(x+y+z+t=0)
+,print(rbrace))$
+
+  ordergreat(x,y,z)$
+  :lisp(defprop mequal (&=) texsym)
+
+
+with_stdout("Maxiplot-eksempel-med-GNUPlot.mxp", print("\\gdef\\mxpii",lbrace),
+eq1:a-2*b=x+y,
+  eq2:b=2*x-3*y+2*z,
+  tex(eq1),
+  print("\\\\"),
+  tex(eq2)
+
+,print(rbrace))$
+
+  unorder()$
+  :lisp(defprop mequal (=) texsym)
+
