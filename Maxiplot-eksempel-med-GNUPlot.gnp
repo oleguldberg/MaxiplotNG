@@ -1,11 +1,29 @@
 
+set term png
+set output "parable.png"
+plot 2*x**2-2
+
+
+set term png
+set output "lines.png"
+plot 2*x+1,3*x-1
+
+
 set term png crop enhanced font "calibri, 10"
-set output "t.png"
+set output "sincos.png"
 set yrange [-2:2]
 set xrange [-4:4]
 set xzeroaxis
 set yzeroaxis
 plot [-4:4] sin(x),cos(x)
+
+
+set term png crop enhanced font "calibri, 10"
+set output "parables.png"
+set xzeroaxis
+set yzeroaxis
+set yrange [-4:4]
+plot [-4:4] 2*x**2-2,-3*x**2+3
 
 
 set term png crop enhanced font "calibri, 10"

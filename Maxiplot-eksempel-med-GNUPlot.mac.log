@@ -18,14 +18,6 @@ read and interpret C:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-e
 (%i11) file_output_append:true
 (%i12) load("mactex-utilities.lisp")
 (%i13) with_stdout("Maxiplot-eksempel-med-GNUPlot.mxp",
-                   print("\\gdef\\mxpi",lbrace),tex(x+y+z+t = 0),
-                   print(rbrace))
-(%i14) ordergreat(x,y,z)
-(&=)
-(%i15) with_stdout("Maxiplot-eksempel-med-GNUPlot.mxp",
-                   print("\\gdef\\mxpii",lbrace),eq1:a-2*b = x+y,
-                   eq2:b = 2*x-3*y+2*z,tex(eq1),print("\\\\"),tex(eq2),
-                   print(rbrace))
-(%i16) unorder()
-(=)
-(%o18) "C:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.mac"
+                   print("\\gdef\\mxpi",lbrace),
+                   tex(solve(2*x^2-2 = (-3)*x^2+4,x)),print(rbrace))
+(%o14) "C:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.mac"

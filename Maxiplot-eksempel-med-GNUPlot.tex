@@ -1,5 +1,7 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[danish]{babel} 
+\usepackage[T1]{fontenc} 
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[amsmath]{maxiplot}
@@ -14,43 +16,62 @@
 \begin{document}
 \maketitle
 
-\section{Introduction}
-For those who do not know \Maxima, it is a symbolic calculation
-program which can be used to compute derivatives and integrals, solve
-equations, find limits, work with vectors and matrices and create
-graphics, among many other things. It also adds the possibility to
-write programs, thus expanding its capabilities. As if all this was
-not enough, it is also released under the GNU General Public License
-and it can be downloaded for free at
-\texttt{http://maxima.sourceforge.net}, where there is also
-documentation in several languages (including Spanish).
-
-The purpose of this \LaTeX{} package is to provide ``programming''
-capabilities importing the results, without the need of working with
-various files and interfaces. Maxima code can be included within the
-\LaTeX{} document. When the document is processed, a file with
-extension \texttt{.mac} is generated, which can be directly processed
-by Maxima, creating another file with extension \texttt{.mxp}; when
-the \LaTeX{} document is processed again, that file will be
-automatically inserted.
-
-\Gnuplot{} commands can also be inserted, thanks to some additional
-commands added by J. M. Mira. Thus, in addition to the auxiliary files
-already mentioned, another file with extension \texttt{.gnp} will be
-created, which after being processed by \Gnuplot{} can be added to the
-document.
-
-
-
 \section{Gnuplot}
-While \Maxima{} can create graphics via \Gnuplot{}, sometimes it might
-be preferable to work directly with this last program. In order to do
-that, the environments \texttt{gnuplot} and its verbatim version
-\texttt{vgnuplot} are used.
+Med \Maxima er er det nemt at benytte CAS. Hvis man vil have en nem mulighed for at behandle grafiske udtryk er \Gnuplot 
+en nem mulighed. Eksemplerne herunder vil benytte mulighedern for at integre \Gnuplot til at tegne grafer. Det vil være sådan at \Gnuplot vil oprette en billedfil (png) som vil blive integreret i \LaTeX{}-dokumentet med komandoen: \emph{mxpIncludegraphics}. Derfor skal du altid huske at typesette to gange for at processen bliver helt færdig.
+
+\subsection{Parabel}
+
+\begin{verbatim}
+\begin{gnuplot}
+set term png 
+set output "parable.png"
+plot 2*x**2-2
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{parable.png}
+\end{center}
+\end{verbatim}
 
 \begin{gnuplot}
+set term png 
+set output "parable.png"
+plot 2*x**2-2
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{parable.png}
+\end{center}
+
+\subsection{To linier}
+
+\begin{verbatim}
+\begin{gnuplot}
+set term png 
+set output "lines.png"
+plot 2*x+1,3*x-1
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{lines.png}
+\end{center}
+\end{verbatim}
+
+\begin{gnuplot}
+set term png 
+set output "lines.png"
+plot 2*x+1,3*x-1
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{lines.png}
+\end{center}
+
+\subsection{Sinus og cosins grafer}
+
+Eksemplet her under tegner cosinus og sinus i et x,y-koordinatsystem.
+
+\begin{verbatim}
+\begin{gnuplot}
 set term png crop enhanced font "calibri, 10"
-set output "t.png"
+set output "sincos.png"
 set yrange [-2:2]
 set xrange [-4:4]
 set xzeroaxis
@@ -58,10 +79,66 @@ set yzeroaxis
 plot [-4:4] sin(x),cos(x)
 \end{gnuplot}
 \begin{center}
-  \mxpIncludegraphics[scale=0.75]{t.png}
+  \mxpIncludegraphics[scale=0.75]{sincos.png}
+\end{center}
+\end{verbatim}
+
+\begin{gnuplot}
+set term png crop enhanced font "calibri, 10"
+set output "sincos.png"
+set yrange [-2:2]
+set xrange [-4:4]
+set xzeroaxis
+set yzeroaxis
+plot [-4:4] sin(x),cos(x)
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{sincos.png}
 \end{center}
 
-Here is a 3D example
+
+\subsection{To parabler}
+
+Skæring mellem parabelerne kan udregnes med \Maxima.
+$$2*x^2 - 2 = - 3 \cdot x^2 + 3$$
+Parablerne skære i
+$$\begin{maxima}
+  tex(solve(2*x^2-2=-3*x^2+4,x))
+\end{maxima}$$
+
+\begin{verbatim}
+\begin{gnuplot}
+set term png crop enhanced font "calibri, 10"
+set output "parables.png"
+set xzeroaxis
+set yzeroaxis
+set yrange [-4:4]
+plot [-4:4] 2*x**2-2,-3*x**2+3
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{parables.png}
+\end{center}
+\end{verbatim}
+
+
+
+\begin{gnuplot}
+set term png crop enhanced font "calibri, 10"
+set output "parables.png"
+set xzeroaxis
+set yzeroaxis
+set yrange [-4:4]
+plot [-4:4] 2*x**2-2,-3*x**2+3
+\end{gnuplot}
+\begin{center}
+  \mxpIncludegraphics[scale=0.75]{parables.png}
+\end{center}
+
+
+\subsection{Eksempel med 3D}
+
+Eksemplet viser hvordan \Gnuplot har mulighed for at arbejde med advancerede grafisk udtryk.
+
 \begin{verbatim}
 \begin{gnuplot}
   set term png crop enhanced font "calibri, 10"
@@ -120,87 +197,8 @@ the same as \verb|includegraphics| from package \verb|graphicx|; in
 fact, it just makes sure that the graphic file exists before invoking
 that macro.
 
-\subsection{Problems}
-This is an experimental version; many of the capabilities of Maxima
-have not been tested and it has not been tried with the most important
-\LaTeX{} packages. Thus, it will surely need some tweaking.
+\subsection{Problemer}
 
-However, I think that most of the problems will appear when showing
-certain outputs. For instance, if the result of a computation is too
-long, it will not be easy to break it into several lines (except if
-one works in Maxima and then copies the result to the document, of
-course).
+Hvis du oplever problemer med at typesetting-processen fejler med at png-billedfilen er ``korrupt'' så prøv at slette filen og typeset ingen.
 
-Other possible problems can be addressed from within the \LaTeX{}
-document. By default, Maxima orders expressions by inverse
-alphabetical order; hence, if we type:\\
-\verb|  $$\imaxima{tex(x+y+z+t=0)}$$|\\
-we get:
-$$\imaxima{tex(x+y+z+t=0)}$$
-
-That can be avoided by using Maxima functions \texttt{ordergreat} and
-\texttt{unorder}:
-\begin{verbatim}
-\imaximacmd{ordergreat(x,y,z,t)$}
-$$\imaxima{tex(x+y+z+t=0)}$$
-\imaximacmd{unorder()$}
-\end{verbatim}
-%\imaximacmd{ordergreat(x,y,z,t)$}
-%$$\imaxima{tex(x+y+z+t=0)}$$
-%\imaximacmd{unorder()$}
-
-Furthermore, if we would like to align several equations, we will need
-to dive a little deeper:
-\begin{verbatim}
-\begin{maximacmd}
-  ordergreat(x,y,z)$
-  :lisp(defprop mequal (&=) texsym)
-\end{maximacmd}
-
-\begin{maxima*}
-  eq1:a-2*b=x+y,
-  eq2:b=2*x-3*y+2*z,
-  tex(eq1),
-  print("\\\\"),
-  tex(eq2)
-\end{maxima*}
-
-\begin{maximacmd}
-  unorder()$
-  :lisp(defprop mequal (=) texsym)    
-\end{maximacmd}
-\end{verbatim}
-
-\begin{maximacmd}
-  ordergreat(x,y,z)$
-  :lisp(defprop mequal (&=) texsym)
-\end{maximacmd}
-
-\begin{maxima*}
-  eq1:a-2*b=x+y,
-  eq2:b=2*x-3*y+2*z,
-  tex(eq1),
-  print("\\\\"),
-  tex(eq2)
-\end{maxima*}
-
-\begin{maximacmd}
-  unorder()$
-  :lisp(defprop mequal (=) texsym)    
-\end{maximacmd}
-
-\begin{align}
-  \maximacurrent
-\end{align}
-
-\section{A few last words}
-As I mentioned before, this is an experimental package that will
-probably need some amendments and additions, so any ideas or comments
-will be welcome.
-\\
-
-\raggedleft{Jos\'e Miguel M. Planas}\\
-\raggedleft{$<$nohaim@gmail.com$>$}\\[10pt]
-\raggedleft{(English translation by Jaime Villate)}
-                  
 \end{document}
