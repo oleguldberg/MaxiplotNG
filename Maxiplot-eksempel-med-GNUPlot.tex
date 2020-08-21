@@ -10,15 +10,12 @@
 \date{\today}
 \author{Ole Guldberg}
 
-\def\Maxima{\emph{Maxima}}
-\def\Gnuplot{\emph{Gnuplot}}
-
 \begin{document}
 \maketitle
 
 \section{Gnuplot}
-Med \Maxima er er det nemt at benytte CAS. Hvis man vil have en nem mulighed for at behandle grafiske udtryk er \Gnuplot 
-en nem mulighed. Eksemplerne herunder vil benytte mulighedern for at integre \Gnuplot til at tegne grafer. Det vil være sådan at \Gnuplot vil oprette en billedfil (png) som vil blive integreret i \LaTeX{}-dokumentet med komandoen: \emph{mxpIncludegraphics}. Derfor skal du altid huske at typesette to gange for at processen bliver helt færdig.
+Med Maxima er er det nemt at benytte CAS. Hvis man vil have en nem mulighed for at behandle grafiske udtryk er Gnuplot 
+en nem mulighed. Eksemplerne herunder vil benytte mulighedern for at integre Gnuplot til at tegne grafer. Det vil være sådan at Gnuplot vil oprette en billedfil (png) som vil blive integreret i \LaTeX{}-dokumentet med komandoen: \emph{mxpIncludegraphics}. Derfor skal du altid huske at typesette to gange for at processen bliver helt færdig.
 
 \subsection{Parabel}
 
@@ -99,7 +96,7 @@ plot [-4:4] sin(x),cos(x)
 
 \subsection{To parabler}
 
-Skæring mellem parabelerne kan udregnes med \Maxima.
+Skæring mellem parabelerne kan udregnes med Maxima.
 $$2*x^2 - 2 = - 3 \cdot x^2 + 3$$
 Parablerne skære i
 $$\begin{maxima}
@@ -137,7 +134,7 @@ plot [-4:4] 2*x**2-2,-3*x**2+3
 
 \subsection{Eksempel med 3D}
 
-Eksemplet viser hvordan \Gnuplot har mulighed for at arbejde med advancerede grafisk udtryk.
+Eksemplet viser hvordan Gnuplot har mulighed for at arbejde med advancerede grafisk udtryk.
 
 \begin{verbatim}
 \begin{gnuplot}
@@ -191,11 +188,6 @@ Eksemplet viser hvordan \Gnuplot har mulighed for at arbejde med advancerede gra
 \begin{center}
   \mxpIncludegraphics[scale=0.75]{toros.png}
 \end{center}
-
-Let us examine the \verb|\mxpIncludegraphics| command: its usage is
-the same as \verb|includegraphics| from package \verb|graphicx|; in
-fact, it just makes sure that the graphic file exists before invoking
-that macro.
 
 \subsection{Problemer}
 
