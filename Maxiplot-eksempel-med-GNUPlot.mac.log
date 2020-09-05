@@ -5,7 +5,7 @@ Dedicated to the memory of William Schelter.
 The function bug_report() provides bug reporting information.
 (%i1) batch("Maxiplot-eksempel-med-GNUPlot.mac")
 
-read and interpret C:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.mac
+read and interpret c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.mac
 (%i2) nolabels:true
 (%i3) display2d:false
 (%i4) load("mactex.lisp")
@@ -20,4 +20,4 @@ read and interpret C:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-e
 (%i13) with_stdout("Maxiplot-eksempel-med-GNUPlot.mxp",
                    print("\\gdef\\mxpi",lbrace),
                    tex(solve(2*x^2-2 = (-3)*x^2+4,x)),print(rbrace))
-(%o14) "C:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.mac"
+(%o14) "c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.mac"

@@ -17,13 +17,13 @@
 Med Maxima er er det nemt at benytte CAS. Hvis man vil have en nem mulighed for at behandle grafiske udtryk er Gnuplot 
 en nem mulighed. Eksemplerne herunder vil benytte mulighedern for at integre Gnuplot til at tegne grafer. Det vil være sådan at Gnuplot vil oprette en billedfil (png) som vil blive integreret i \LaTeX{}-dokumentet med komandoen: \emph{mxpIncludegraphics}. Derfor skal du altid huske at typesette to gange for at processen bliver helt færdig.
 
-\subsection{Parabel}
+\subsection{3. gradsfunktion}
 
 \begin{verbatim}
 \begin{gnuplot}
 set term png 
 set output "parable.png"
-plot 2*x**2-2
+plot x**3+1
 \end{gnuplot}
 \begin{center}
   \mxpIncludegraphics[scale=0.75]{parable.png}
@@ -33,7 +33,7 @@ plot 2*x**2-2
 \begin{gnuplot}
 set term png 
 set output "parable.png"
-plot 2*x**2-2
+plot x**3+1
 \end{gnuplot}
 \begin{center}
   \mxpIncludegraphics[scale=0.75]{parable.png}
