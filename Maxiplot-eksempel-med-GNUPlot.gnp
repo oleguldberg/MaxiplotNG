@@ -1,6 +1,6 @@
 
 set term png
-set output "parable.png"
+set output "3grad.png"
 plot x**3+1
 
 

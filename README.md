@@ -7,8 +7,16 @@ Dette er en baseret på den original maxiplot-pakke.
 ## Installation og brug
 
 - Installer Maxima og Gnuplot og tilføj deres mapper til %PATH miljøvariablen.
+
+### Hvis du bruger TeXWorks
 - Tilføj -enable-write18 til pdflatex parametererne i TexWorks preferences-menuen.
 - Sæt eventuelt pdflatex som default typesætter i TeXworks hvis du benytter den editor
+
+### Hvis du benytter latexmk
+- Opret filen C:\latexmk\LatexMk
+- indsæt linierne:
+$latex = 'latex -interaction=nonstopmode -shell-escape';
+$pdflatex = 'pdflatex -interaction=nonstopmode -shell-escape';
 
 Kopiere filen maxiplot.sty til mappen hvor du skriver dit LaTeX-dokument og typeset dokumentet med pdflatex (to gange).
 

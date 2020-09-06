@@ -90,11 +90,11 @@ INPUT c:/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT c:/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ectt1095.tfm
 OUTPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.gnp
-INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/parable.png
-INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/parable.png
-INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/parable.png
+INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/3grad.png
+INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/3grad.png
+INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/3grad.png
 OUTPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.pdf
-INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/parable.png
+INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/3grad.png
 INPUT c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/lines.png
 INPUT c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/lines.png

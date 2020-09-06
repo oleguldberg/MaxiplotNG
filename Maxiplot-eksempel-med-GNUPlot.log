@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.5)  5 SEP 2020 13:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.5)  6 SEP 2020 07:33
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -169,10 +169,10 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 \@mainplot=\write3
 \openout3 = `Maxiplot-eksempel-med-GNUPlot.gnp'.
 
-<parable.png, id=1, 481.8pt x 361.35pt>
-File: parable.png Graphic file (type png)
-<use parable.png>
-Package pdftex.def Info: parable.png  used on input line 39.
+<3grad.png, id=1, 481.8pt x 361.35pt>
+File: 3grad.png Graphic file (type png)
+<use 3grad.png>
+Package pdftex.def Info: 3grad.png  used on input line 39.
 (pdftex.def)             Requested size: 361.3491pt x 271.01184pt.
 
 Overfull \hbox (1.3491pt too wide) in paragraph at lines 39--40
@@ -192,7 +192,7 @@ Overfull \hbox (1.3491pt too wide) in paragraph at lines 61--62
  [] 
  []
 
-[2 <c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/parable.png>]
+[2 <c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/3grad.png>]
 <sincos.png, id=20, 456.20438pt x 345.54094pt>
 File: sincos.png Graphic file (type png)
 <use sincos.png>
@@ -237,14 +237,14 @@ runsystem(gnuplot.exe Maxiplot-eksempel-med-GNUPlot.gnp)...executed.
  <c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/toros.png>] (c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.aux) ) 
 Here is how much of TeX's memory you used:
  2954 strings out of 480880
- 40208 string characters out of 5911610
+ 40196 string characters out of 5911610
  297547 words of memory out of 5000000
  18547 multiletter control sequences out of 15000+600000
  547163 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,6n,33p,450b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.pdf (6 pages, 199079 bytes).
+Output written on c:/Users/ole/OneDrive/Dokumenter/GitHub/MaxiplotNG/Maxiplot-eksempel-med-GNUPlot.pdf (6 pages, 199034 bytes).
 PDF statistics:
  86 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream
