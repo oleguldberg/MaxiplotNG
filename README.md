@@ -13,7 +13,7 @@ Dette er en baseret på den original maxiplot-pakke.
 - Sæt eventuelt pdflatex som default typesætter i TeXworks hvis du benytter den editor
 
 ### Hvis du benytter latexmk
-- Opret filen C:\latexmk\LatexMk
+- Opret filen C:\latexmk\LatexMk (Eller $HOME/.latexmkrc på MacOS og *nix-platforme)
 - indsæt linierne:
 $latex = 'latex -interaction=nonstopmode -shell-escape';
 $pdflatex = 'pdflatex -interaction=nonstopmode -shell-escape';
