@@ -1,6 +1,0 @@
-\gdef\mxpi { 
-\left[ x=2 \right] 
-} 
-\gdef\mxpii { 
-\left[ x=-\sqrt{5} , x=\sqrt{5} \right] 
-} 
