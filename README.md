@@ -6,7 +6,8 @@ Dette er en baseret på den original maxiplot-pakke.
 
 ## Installation og brug
 
-- Installer Maxima og Gnuplot og tilføj deres mapper til %PATH miljøvariablen.
+- Installer [Maxima](https://maxima.sourceforge.io/download.html) og [Gnuplot](http://www.gnuplot.info/download.html)
+- Tilføj deres mapper til %PATH miljøvariablen.
 
 ### Hvis du bruger TeXWorks
 - Tilføj -enable-write18 til pdflatex parametererne i TexWorks preferences-menuen.
